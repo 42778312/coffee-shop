@@ -39,7 +39,7 @@ function Slide({
             </div>
           </div>
         </div>
-        <div className="h-0.5 w-3 bg-[#284010]" />
+        <div className="h-0.5 w-3 bg-[#1F3D38]" />
         <div className="text-[18px] leading-[1.44] font-medium tracking-[-0.01em]">
           {name}
         </div>
@@ -67,7 +67,7 @@ function ArrowButton({
       aria-label={label}
       aria-controls={controlsId}
       onClick={onClick}
-      className="group relative flex size-11 shrink-0 items-center justify-center overflow-hidden rounded-full border-[3px] border-[#284010] bg-transparent transition-colors duration-200 hover:bg-[#284010] focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#78bf30]"
+      className="group relative flex size-11 shrink-0 items-center justify-center overflow-hidden rounded-full border-[3px] border-[#1F3D38] bg-transparent transition-colors duration-200 hover:bg-[#1F3D38] focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#AAD0C8]"
     >
       <img
         src={img(def)}
@@ -202,7 +202,7 @@ export function ReviewsSection() {
           setHovering(false);
         }
       }}
-      className="relative flex h-screen min-h-[880px] items-stretch justify-center min-[992px]:min-h-[760px]"
+      className="relative flex h-screen min-h-[880px] items-stretch justify-center bg-[#AAD0C8] text-[#1F3D38] min-[992px]:min-h-[760px]"
     >
       <div className="mx-auto flex w-full max-w-[1328px] flex-1 flex-col px-5 md:px-8 min-[992px]:px-16">
         <div className="relative flex flex-1 flex-col items-center justify-center py-12">

@@ -50,27 +50,30 @@
 }
 
 :root {
-  --mello-cream: #e9ebdf;
-  --mello-forest: #284010;
-  --mello-lime: #78bf30;
-  --background: #e9ebdf;
-  --foreground: #284010;
-  --card: #e9ebdf;
-  --card-foreground: #284010;
-  --popover: #e9ebdf;
-  --popover-foreground: #284010;
-  --primary: #78bf30;
-  --primary-foreground: #284010;
-  --secondary: #284010;
-  --secondary-foreground: #e9ebdf;
-  --muted: rgb(40 64 16 / 10%);
-  --muted-foreground: rgb(40 64 16 / 80%);
-  --accent: #78bf30;
-  --accent-foreground: #284010;
+  --mello-mint: #aad0c8;
+  --mello-white: #ffffff;
+  --mello-ink: #1f3d38;
+  --mello-cream: var(--mello-white);
+  --mello-forest: var(--mello-ink);
+  --mello-lime: var(--mello-mint);
+  --background: #ffffff;
+  --foreground: #1f3d38;
+  --card: #ffffff;
+  --card-foreground: #1f3d38;
+  --popover: #ffffff;
+  --popover-foreground: #1f3d38;
+  --primary: #aad0c8;
+  --primary-foreground: #1f3d38;
+  --secondary: #ffffff;
+  --secondary-foreground: #1f3d38;
+  --muted: rgb(31 61 56 / 10%);
+  --muted-foreground: rgb(31 61 56 / 80%);
+  --accent: #aad0c8;
+  --accent-foreground: #1f3d38;
   --destructive: oklch(0.577 0.245 27.325);
-  --border: #284010;
-  --input: #284010;
-  --ring: #78bf30;
+  --border: #1f3d38;
+  --input: #1f3d38;
+  --ring: #aad0c8;
   --chart-1: oklch(0.87 0 0);
   --chart-2: oklch(0.556 0 0);
   --chart-3: oklch(0.439 0 0);
@@ -132,8 +135,8 @@
     @apply font-sans scroll-smooth;
   }
   body {
-    background: var(--mello-cream);
-    color: var(--mello-forest);
+    background: var(--mello-white);
+    color: var(--mello-ink);
   }
   h1, h2, h3, h4 {
     font-family: var(--font-heading);
@@ -222,12 +225,12 @@
 
 .visit-contact:hover,
 .visit-contact:focus-visible {
-  background-color: #284010;
-  color: #e9ebdf;
+  background-color: #1f3d38;
+  color: #ffffff;
 }
 
 .visit-contact:focus-visible {
-  outline: 2px solid #e9ebdf;
+  outline: 2px solid #ffffff;
   outline-offset: 2px;
 }
 

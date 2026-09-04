@@ -11,7 +11,7 @@ function PhotoCard({
   caption: string;
 }) {
   return (
-    <div className="flex h-full flex-col rounded-[24px] bg-[#e9ebdf] p-3 text-[#284010]">
+    <div className="flex h-full flex-col rounded-[24px] bg-[#FFFFFF] p-3 text-[#1F3D38]">
       <div className="relative min-h-0 flex-1 overflow-hidden rounded-[12px]">
         <img src={src} alt={alt} className="absolute inset-0 size-full object-cover" />
       </div>
@@ -51,21 +51,21 @@ export function VisitSection() {
   return (
     <section
       id="visit"
-      className="relative overflow-hidden bg-[#284010] py-[160px] text-[#e9ebdf] md:py-[200px]"
+      className="relative overflow-hidden bg-[#1F3D38] py-[160px] text-[#FFFFFF] md:py-[200px]"
     >
       <div
         aria-hidden
-        className="pointer-events-none absolute top-[-56px] left-[-5px] h-[88px] w-[101%] -rotate-[2deg] bg-[#e9ebdf]"
+        className="pointer-events-none absolute top-[-56px] left-[-5px] h-[88px] w-[101%] -rotate-[2deg] bg-[#AAD0C8]"
       />
       <div
         aria-hidden
-        className="pointer-events-none absolute bottom-[-56px] left-[-5px] h-[88px] w-[101%] rotate-[2deg] bg-[#e9ebdf]"
+        className="pointer-events-none absolute bottom-[-56px] left-[-5px] h-[88px] w-[101%] rotate-[2deg] bg-[#AAD0C8]"
       />
 
       <div className="relative mx-auto flex w-full max-w-[1328px] flex-col gap-20 px-8 md:px-16">
         <div className="relative flex flex-col items-center gap-3 md:gap-4">
           <div className="flex items-center gap-2.5 md:gap-3">
-            <span className="size-2 shrink-0 rounded-full bg-[#78bf30]" />
+            <span className="size-2 shrink-0 rounded-full bg-[#AAD0C8]" />
             <p className="font-hand text-[18px] leading-[1.04] md:text-[21px]">
               See you soon
             </p>
@@ -108,7 +108,7 @@ export function VisitSection() {
                 href="https://google.com/maps"
                 target="_blank"
                 rel="noreferrer"
-                className="visit-contact flex flex-1 items-start gap-6 rounded-[24px] border-[3px] border-[#78bf30] bg-[#78bf30] p-6 text-[#284010] md:p-7"
+                className="visit-contact flex flex-1 items-start gap-6 rounded-[24px] border-[3px] border-[#AAD0C8] bg-[#AAD0C8] p-6 text-[#1F3D38] md:p-7"
               >
                 <div className="flex h-full min-w-0 flex-1 flex-col gap-20">
                   <p className="font-hand text-[16px] leading-[1.04]">
@@ -127,7 +127,7 @@ export function VisitSection() {
 
               <a
                 href="mailto:hi@mello.com?subject=Support"
-                className="visit-contact relative flex flex-row-reverse items-center justify-center gap-6 rounded-[24px] border-[3px] border-[#78bf30] bg-[#78bf30] px-6 py-7 text-[#284010] min-[992px]:w-[88px] min-[992px]:shrink-0 min-[992px]:flex-col min-[992px]:px-6"
+                className="visit-contact relative flex flex-row-reverse items-center justify-center gap-6 rounded-[24px] border-[3px] border-[#AAD0C8] bg-[#AAD0C8] px-6 py-7 text-[#1F3D38] min-[992px]:w-[88px] min-[992px]:shrink-0 min-[992px]:flex-col min-[992px]:px-6"
               >
                 <HoverIllu
                   def={img("illustration-21.svg")}
@@ -142,7 +142,7 @@ export function VisitSection() {
           </div>
 
           <div className="flex flex-col gap-4 md:max-[991px]:col-start-2 md:max-[991px]:row-start-1 min-[992px]:col-span-3">
-            <div className="flex items-start gap-6 rounded-[24px] bg-[#e9ebdf] p-7 text-[#284010]">
+            <div className="flex items-start gap-6 rounded-[24px] bg-[#FFFFFF] p-7 text-[#1F3D38]">
               <div className="flex flex-1 flex-col gap-1">
                 <p className="font-hand text-[16px] leading-[1.04]">
                   See you soon

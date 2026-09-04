@@ -3,7 +3,7 @@ import type { FeaturedItem } from "@/types/mello";
 
 function Pill({ children }: { children: string }) {
   return (
-    <span className="rounded-full bg-[#e9ebdf]/20 px-3 py-1 text-[13px] font-medium text-[#e9ebdf]">
+    <span className="rounded-full bg-[#FFFFFF]/20 px-3 py-1 text-[13px] font-medium text-[#FFFFFF]">
       {children}
     </span>
   );
@@ -13,7 +13,7 @@ function PhotoCard({ item }: { item: FeaturedItem }) {
   const tall = item.variant === "photo-tall";
   return (
     <article
-      className={`relative overflow-hidden rounded-[24px] p-7 text-[#e9ebdf] ${
+      className={`relative overflow-hidden rounded-[24px] p-7 text-[#FFFFFF] ${
         tall ? "min-h-[608px]" : "min-h-[315px]"
       }`}
     >
@@ -22,7 +22,7 @@ function PhotoCard({ item }: { item: FeaturedItem }) {
         alt={item.imageAlt ?? ""}
         className="absolute inset-0 size-full object-cover"
       />
-      <div className="absolute inset-0 bg-[#284010]/25" />
+      <div className="absolute inset-0 bg-[#1F3D38]/25" />
       <div className="relative z-10 flex h-full min-h-[inherit] flex-col">
         <div className="flex gap-2">
           <Pill>{item.tags[0]}</Pill>
@@ -39,13 +39,13 @@ function PhotoCard({ item }: { item: FeaturedItem }) {
             <span className="font-heading text-[28px] leading-none">
               {item.price}
             </span>
-            <span className="rounded-full bg-[#e9ebdf]/20 px-3 py-1 text-[14px] font-medium">
+            <span className="rounded-full bg-[#FFFFFF]/20 px-3 py-1 text-[14px] font-medium">
               {item.size}
             </span>
           </div>
         </div>
         {item.badge === "Favorite" ? (
-          <span className="absolute top-7 right-7 rounded-full bg-[#78bf30] px-3 py-1 text-[13px] font-medium text-[#284010]">
+          <span className="absolute top-7 right-7 rounded-full bg-[#AAD0C8] px-3 py-1 text-[13px] font-medium text-[#1F3D38]">
             Favorite
           </span>
         ) : null}
@@ -59,7 +59,7 @@ function ColorCard({ item }: { item: FeaturedItem }) {
   return (
     <article
       className={`relative flex min-h-[277px] flex-col rounded-[24px] p-7 ${
-        lime ? "bg-[#78bf30] text-[#284010]" : "bg-[#284010] text-[#e9ebdf]"
+        lime ? "bg-[#AAD0C8] text-[#1F3D38]" : "bg-[#1F3D38] text-[#FFFFFF]"
       }`}
     >
       {item.badge ? (
@@ -101,9 +101,9 @@ function ColorCard({ item }: { item: FeaturedItem }) {
 export function FeaturedMenuSection() {
   const [tall, wide, lime, forest] = featuredItems;
   return (
-    <section className="px-5 py-20 md:px-10 md:py-24">
+    <section className="bg-white px-5 py-20 md:px-10 md:py-24">
       <div className="mx-auto max-w-[1180px]">
-        <p className="font-hand text-[22px] text-[#284010]">Coffee this way</p>
+        <p className="font-hand text-[22px] text-[#1F3D38]">Coffee this way</p>
         <div className="mt-3 flex flex-col gap-6 lg:flex-row lg:items-end lg:justify-between">
           <h2 className="max-w-[640px] text-[48px] leading-[0.95] tracking-[-0.8px] md:text-[80px] md:leading-[80px]">
             Choose your cup of happy

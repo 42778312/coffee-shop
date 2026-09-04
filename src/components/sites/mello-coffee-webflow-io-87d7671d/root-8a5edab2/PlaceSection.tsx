@@ -30,7 +30,7 @@ export function PlaceSection() {
         <div className="flex flex-col gap-4 md:gap-6 min-[992px]:grid min-[992px]:grid-cols-4 min-[992px]:items-end min-[992px]:gap-4">
           <div className="flex flex-col gap-3 md:gap-4 min-[992px]:col-span-3">
             <div className="flex items-center gap-2.5 md:gap-3">
-              <span className="size-2 shrink-0 rounded-full bg-[#78bf30]" />
+              <span className="size-2 shrink-0 rounded-full bg-[#AAD0C8]" />
               <p className="font-hand text-[18px] leading-[1.04] md:text-[21px]">
                 Take a seat
               </p>
@@ -44,7 +44,7 @@ export function PlaceSection() {
           </p>
         </div>
 
-        <div className="flex flex-col-reverse overflow-hidden rounded-[24px] border-[3px] border-[#284010] bg-[#78bf30] min-[992px]:grid min-[992px]:h-[670px] min-[992px]:grid-cols-3">
+        <div className="flex flex-col-reverse overflow-hidden rounded-[24px] border-[3px] border-[#1F3D38] bg-[#AAD0C8] min-[992px]:grid min-[992px]:h-[670px] min-[992px]:grid-cols-3">
           <div className="relative aspect-[4/3] overflow-hidden min-[992px]:col-span-2 min-[992px]:aspect-auto min-[992px]:h-full">
             <img
               src={img("coffee-shop.avif")}
@@ -61,15 +61,15 @@ export function PlaceSection() {
                   aria-pressed={on}
                   onClick={() => activate(spot.id)}
                   className={cn(
-                    "absolute z-[1] flex cursor-pointer items-center justify-center rounded-full border-0 bg-[#e9ebdf]/20 text-[#284010]",
+                    "absolute z-[1] flex cursor-pointer items-center justify-center rounded-full border-0 bg-[#FFFFFF]/20 text-[#1F3D38]",
                     on && "p-1 md:p-1.5",
                     hotspotClass[index],
                   )}
                 >
                   <span
                     className={cn(
-                      "flex size-10 items-center justify-center overflow-hidden rounded-full border-[3px] border-[#e9ebdf] text-[14px] leading-none font-bold tracking-[-0.02em] md:size-12",
-                      on ? "bg-[#78bf30]" : "bg-[#e9ebdf]",
+                      "flex size-10 items-center justify-center overflow-hidden rounded-full border-[3px] border-[#FFFFFF] text-[14px] leading-none font-bold tracking-[-0.02em] md:size-12",
+                      on ? "bg-[#AAD0C8]" : "bg-[#FFFFFF]",
                     )}
                   >
                     {spot.index}
@@ -87,7 +87,7 @@ export function PlaceSection() {
               aria-labelledby={`place-tab-${current.id}`}
               className="flex h-[360px] flex-col justify-between p-7 min-[480px]:h-[296px] min-[992px]:h-[400px]"
             >
-              <p className="font-hand text-[16px] leading-[1.04] text-[#284010]/80">
+              <p className="font-hand text-[16px] leading-[1.04] text-[#1F3D38]/80">
                 {current.index}/04
               </p>
               <div className="flex w-full flex-col gap-8 min-[480px]:flex-row-reverse min-[480px]:items-start min-[992px]:flex-col">
@@ -153,10 +153,10 @@ export function PlaceSection() {
                       activate(spots[next].id);
                     }}
                     className={cn(
-                      "flex cursor-pointer items-center gap-3 border-t-[3px] border-[#284010]/10 px-7 py-5 text-left transition-colors duration-300",
+                      "flex cursor-pointer items-center gap-3 border-t-[3px] border-[#1F3D38]/10 px-7 py-5 text-left transition-colors duration-300",
                       on
-                        ? "bg-[#284010] text-[#e9ebdf]"
-                        : "bg-transparent text-[#284010]/80 hover:text-[#284010]",
+                        ? "bg-[#1F3D38] text-[#FFFFFF]"
+                        : "bg-transparent text-[#1F3D38]/80 hover:text-[#1F3D38]",
                     )}
                   >
                     <span className="font-hand shrink-0 text-[16px] leading-[1.04]">

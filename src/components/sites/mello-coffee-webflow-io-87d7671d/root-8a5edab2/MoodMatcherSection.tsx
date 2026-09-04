@@ -38,12 +38,12 @@ export function MoodMatcherSection() {
   const arrow = quadrants.find((q) => q.id === active)?.rotate ?? -135;
 
   return (
-    <section className="overflow-hidden bg-[#284010] px-5 py-20 text-[#e9ebdf] md:px-8 md:py-[128px] lg:overflow-visible lg:px-16 lg:py-[160px]">
+    <section className="overflow-hidden bg-[#1F3D38] px-5 py-20 text-[#FFFFFF] md:px-8 md:py-[128px] lg:overflow-visible lg:px-16 lg:py-[160px]">
       <div className="mx-auto flex w-full max-w-[1328px] flex-col gap-[120px] lg:gap-20">
         <div className="relative flex items-center">
           <div className="flex w-full flex-col items-start gap-4">
             <div className="flex items-center gap-3">
-              <span className="size-2 shrink-0 rounded-full bg-[#78bf30]" />
+              <span className="size-2 shrink-0 rounded-full bg-[#AAD0C8]" />
               <p className="font-hand text-[18px] leading-[1.04] md:text-[21px]">
                 Mood matcher
               </p>
@@ -71,7 +71,7 @@ export function MoodMatcherSection() {
             </p>
 
             <div className="relative w-full">
-              <div className="flex w-full flex-col gap-[3px] bg-[#284010]">
+              <div className="flex w-full flex-col gap-[3px] bg-[#1F3D38]">
                 <div className="flex gap-[3px]">
                   {quadrants.slice(0, 2).map((quad) => (
                     <WheelSlice
@@ -105,7 +105,7 @@ export function MoodMatcherSection() {
                     transform: `translateY(-50%) rotate(${arrow}deg)`,
                   }}
                 />
-                <div className="relative flex size-16 items-center justify-center rounded-full border-[3px] border-[#284010] bg-[#78bf30] p-4 lg:size-20 lg:p-6">
+                <div className="relative flex size-16 items-center justify-center rounded-full border-[3px] border-[#1F3D38] bg-[#AAD0C8] p-4 lg:size-20 lg:p-6">
                   <img
                     src={img("illustration-1.svg")}
                     alt=""
@@ -133,7 +133,7 @@ export function MoodMatcherSection() {
           </div>
 
           <div className="flex items-center justify-center lg:col-span-4 lg:col-start-9 lg:justify-end">
-            <article className="flex w-full max-w-[360px] flex-col gap-7 rounded-[24px] bg-[#e9ebdf] p-3 text-[#284010] md:max-w-[400px] lg:max-w-[360px]">
+            <article className="flex w-full max-w-[360px] flex-col gap-7 rounded-[24px] bg-[#FFFFFF] p-3 text-[#1F3D38] md:max-w-[400px] lg:max-w-[360px]">
               <div className="relative aspect-[4/3] w-full overflow-hidden rounded-[12px]">
                 <img
                   key={current.drink.image}
@@ -149,7 +149,7 @@ export function MoodMatcherSection() {
                       <span className="text-[14px] font-medium leading-[1.44] tracking-[-0.01em]">
                         {current.drink.tags[0]}
                       </span>
-                      <span className="size-[3px] rounded-full bg-[#284010]" />
+                      <span className="size-[3px] rounded-full bg-[#1F3D38]" />
                       <span className="text-[14px] font-medium leading-[1.44] tracking-[-0.01em]">
                         {current.drink.tags[1]}
                       </span>
@@ -166,7 +166,7 @@ export function MoodMatcherSection() {
                   <span className="text-[18px] font-bold leading-none tracking-[-0.02em]">
                     {current.drink.price}
                   </span>
-                  <span className="rounded-[6px] bg-[#284010]/10 px-1 py-px text-[10px] font-medium leading-[1.44] tracking-[-0.01em] backdrop-blur-[5px]">
+                  <span className="rounded-[6px] bg-[#1F3D38]/10 px-1 py-px text-[10px] font-medium leading-[1.44] tracking-[-0.01em] backdrop-blur-[5px]">
                     {current.drink.size}
                   </span>
                 </div>
@@ -201,8 +201,8 @@ function WheelSlice({
       className={cn(
         "flex aspect-square w-full flex-col transition-colors duration-300",
         active
-          ? "bg-[#78bf30] text-[#284010]"
-          : "bg-[#e9ebdf] text-[#284010]/80 hover:text-[#284010]",
+          ? "bg-[#AAD0C8] text-[#1F3D38]"
+          : "bg-[#FFFFFF] text-[#1F3D38]/80 hover:text-[#1F3D38]",
         className,
       )}
     >

@@ -22,7 +22,7 @@ export function CoffeeOclockSection() {
         <div className="flex flex-col gap-4 md:gap-6 lg:grid lg:grid-cols-4 lg:items-end lg:gap-4">
           <div className="flex flex-col gap-3 md:gap-4 lg:col-span-3">
             <div className="flex items-center gap-2.5 md:gap-3">
-              <span className="size-2 shrink-0 rounded-full bg-[#78bf30]" />
+              <span className="size-2 shrink-0 rounded-full bg-[#AAD0C8]" />
               <p className="font-hand text-[18px] leading-[1.04] md:text-[21px]">
                 Coffee o’clock
               </p>
@@ -37,7 +37,7 @@ export function CoffeeOclockSection() {
         </div>
 
         <div className="relative flex flex-col items-center gap-[120px] md:items-end md:gap-10">
-          <div className="flex w-full flex-col rounded-[24px] bg-[#284010] p-[3px] text-[#e9ebdf]">
+          <div className="flex w-full flex-col rounded-[24px] bg-[#1F3D38] p-[3px] text-[#FFFFFF]">
             <div
               key={current.id}
               role="tabpanel"
@@ -55,11 +55,11 @@ export function CoffeeOclockSection() {
               </div>
 
               <div className="flex w-full flex-col-reverse gap-2 md:gap-2 lg:grid lg:grid-cols-12 lg:gap-4">
-                <div className="flex text-[#78bf30] lg:col-span-8">
+                <div className="flex text-[#AAD0C8] lg:col-span-8">
                   <span className="font-heading text-[96px] leading-none tracking-[-0.01em] md:text-[224px] lg:text-[264px]">
                     {hh}
                   </span>
-                  <span className="font-heading text-[96px] leading-none text-[#e9ebdf] md:text-[224px] lg:text-[264px]">
+                  <span className="font-heading text-[96px] leading-none text-[#FFFFFF] md:text-[224px] lg:text-[264px]">
                     :
                   </span>
                   <span className="font-heading text-[96px] leading-none tracking-[-0.01em] md:text-[224px] lg:text-[264px]">
@@ -117,8 +117,8 @@ export function CoffeeOclockSection() {
                     className={cn(
                       "flex cursor-pointer items-start justify-start gap-6 p-6 text-left transition-colors duration-300",
                       on
-                        ? "bg-[#78bf30] text-[#284010]"
-                        : "bg-[#e9ebdf] text-[#284010]/80 hover:text-[#284010]",
+                        ? "bg-[#AAD0C8] text-[#1F3D38]"
+                        : "bg-[#FFFFFF] text-[#1F3D38]/80 hover:text-[#1F3D38]",
                     )}
                   >
                     <span className="flex w-full flex-col gap-0.5">

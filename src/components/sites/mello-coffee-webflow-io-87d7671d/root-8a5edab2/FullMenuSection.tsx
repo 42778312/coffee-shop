@@ -3,7 +3,7 @@ import { menuCategories } from "./content";
 
 export function FullMenuSection() {
   return (
-    <section id="menu" className="px-5 py-[80px] md:px-10 md:py-[128px] lg:py-[160px]">
+    <section id="menu" className="bg-[#AAD0C8]/25 px-5 py-[80px] md:px-10 md:py-[128px] lg:py-[160px]">
       <div className="mx-auto max-w-[1200px]">
         <div className="flex flex-col items-center gap-3 md:gap-4">
           <img
@@ -19,7 +19,7 @@ export function FullMenuSection() {
         <div className="mt-20 grid grid-cols-1 gap-16 md:grid-cols-2 md:gap-x-16 lg:mt-[120px] lg:gap-x-[120px] lg:gap-y-20">
           {menuCategories.map((cat) => (
             <div key={cat.title} className="flex flex-col gap-4">
-              <div className="flex flex-col gap-1.5 border-b-[3px] border-[#284010]/10 pb-4">
+              <div className="flex flex-col gap-1.5 border-b-[3px] border-[#1F3D38]/10 pb-4">
                 <h3 className="text-[24px] leading-none tracking-[-0.01em] md:text-[28px]">
                   {cat.title}
                 </h3>
@@ -31,7 +31,7 @@ export function FullMenuSection() {
                     {cat.sizeLabels.map((label) => (
                       <span
                         key={label}
-                        className="w-[52px] text-right text-[14px] font-medium leading-[1.44] tracking-[-0.01em] text-[#284010]/80"
+                        className="w-[52px] text-right text-[14px] font-medium leading-[1.44] tracking-[-0.01em] text-[#1F3D38]/80"
                       >
                         {label}
                       </span>

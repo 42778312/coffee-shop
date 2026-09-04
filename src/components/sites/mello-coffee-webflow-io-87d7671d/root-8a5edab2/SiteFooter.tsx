@@ -2,7 +2,7 @@ import { img } from "./assets";
 
 export function SiteFooter() {
   return (
-    <footer className="bg-[#e9ebdf] px-5 py-12 text-[#284010] md:px-10">
+    <footer className="bg-[#AAD0C8] px-5 py-12 text-[#1F3D38] md:px-10">
       <div className="mx-auto grid max-w-[1180px] gap-10 md:grid-cols-[1.2fr_2fr]">
         <div>
           <div className="flex items-center gap-3">

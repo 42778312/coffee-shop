@@ -4,11 +4,11 @@ type Variant = "primary" | "ghost" | "ghostOnDark";
 
 const variants: Record<Variant, string> = {
   primary:
-    "bg-[#78bf30] text-[#284010] hover:brightness-95",
+    "bg-[#AAD0C8] text-[#1F3D38] hover:bg-[#8fc4ba]",
   ghost:
-    "bg-transparent text-[#284010] ring-1 ring-inset ring-[#284010] hover:bg-[#284010]/5",
+    "bg-transparent text-[#1F3D38] ring-1 ring-inset ring-[#1F3D38] hover:bg-[#AAD0C8]/40",
   ghostOnDark:
-    "bg-transparent text-[#e9ebdf] ring-1 ring-inset ring-[#e9ebdf] hover:bg-white/10",
+    "bg-transparent text-[#FFFFFF] ring-1 ring-inset ring-[#AAD0C8] hover:bg-[#AAD0C8] hover:text-[#1F3D38]",
 };
 
 export function MelloButton({

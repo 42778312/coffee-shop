@@ -19,7 +19,7 @@ function ReceiptCircles({ edge }: { edge: "top" | "bottom" }) {
       {Array.from({ length: 16 }, (_, i) => (
         <span
           key={i}
-          className="size-4 shrink-0 rounded-full bg-[#284010]"
+          className="size-4 shrink-0 rounded-full bg-[#1F3D38]"
         />
       ))}
     </div>
@@ -28,20 +28,20 @@ function ReceiptCircles({ edge }: { edge: "top" | "bottom" }) {
 
 export function WhatMattersSection() {
   return (
-    <section className="overflow-hidden bg-[#284010] px-5 py-20 text-[#e9ebdf] md:px-8 md:py-[128px] lg:overflow-visible lg:px-16 lg:py-[160px]">
+    <section className="overflow-hidden bg-[#1F3D38] px-5 py-20 text-[#FFFFFF] md:px-8 md:py-[128px] lg:overflow-visible lg:px-16 lg:py-[160px]">
       <div className="mx-auto flex w-full max-w-[1328px] flex-col items-center gap-20 md:gap-[120px] lg:flex-row lg:gap-4">
         <div className="flex w-full flex-col items-start gap-8">
           <div className="flex w-full flex-col items-start gap-4 md:gap-6">
             <div className="flex w-full flex-col items-start gap-3 md:gap-4">
               <div className="flex items-center gap-2.5 md:gap-3">
-                <span className="size-2 shrink-0 rounded-full bg-[#78bf30]" />
+                <span className="size-2 shrink-0 rounded-full bg-[#AAD0C8]" />
                 <p className="font-hand text-[18px] leading-[1.04] md:text-[21px]">
                   What matters
                 </p>
               </div>
               <h2 className="max-w-[288px] text-[48px] leading-none tracking-[-0.01em] md:max-w-[408px] md:text-[68px] lg:max-w-[480px] lg:text-[80px]">
                 Things that make mornings{" "}
-                <span className="text-[#78bf30]">feel better.</span>
+                <span className="text-[#AAD0C8]">feel better.</span>
               </h2>
             </div>
             <p className="max-w-[360px] text-[18px] font-medium leading-[1.44] tracking-[-0.01em]">
@@ -67,7 +67,7 @@ export function WhatMattersSection() {
 
         <div className="flex w-full shrink-0 justify-center lg:w-auto">
           <div className="relative w-full max-w-[360px]">
-            <article className="relative flex w-full flex-col gap-10 bg-[#e9ebdf] px-6 py-10 text-[#284010] md:px-7">
+            <article className="relative flex w-full flex-col gap-10 bg-white px-6 py-10 text-[#1F3D38] md:px-7">
               <ReceiptCircles edge="top" />
               <ReceiptCircles edge="bottom" />
 
@@ -91,7 +91,7 @@ export function WhatMattersSection() {
                   />
                 </div>
 
-                <div className="h-[3px] bg-[#284010]/10" />
+                <div className="h-[3px] bg-[#1F3D38]/10" />
 
                 <div className="flex flex-col gap-2.5">
                   {lines.map((row) => (
@@ -109,7 +109,7 @@ export function WhatMattersSection() {
                   ))}
                 </div>
 
-                <div className="h-[3px] bg-[#284010]/10" />
+                <div className="h-[3px] bg-[#1F3D38]/10" />
 
                 <div className="flex items-end justify-between gap-6">
                   <p className="min-w-0 flex-1 text-[14px] font-medium leading-[1.44] tracking-[-0.01em]">
@@ -120,7 +120,7 @@ export function WhatMattersSection() {
                   </p>
                 </div>
 
-                <div className="h-[3px] bg-[#284010]/10" />
+                <div className="h-[3px] bg-[#1F3D38]/10" />
               </div>
 
               <div className="flex flex-col items-center gap-3">

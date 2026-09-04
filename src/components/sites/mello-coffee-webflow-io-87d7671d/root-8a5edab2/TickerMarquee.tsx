@@ -7,8 +7,8 @@ export function TickerMarquee({ inverted = false }: { inverted?: boolean }) {
     <div
       className={`overflow-hidden ${
         inverted
-          ? "bg-[#284010] text-[#e9ebdf]"
-          : "bg-[#78bf30] text-[#284010]"
+          ? "bg-[#1F3D38] text-[#AAD0C8]"
+          : "bg-[#AAD0C8] text-[#1F3D38]"
       }`}
     >
       <div className="mello-marquee-track flex w-max items-center gap-6 py-6 pr-6">

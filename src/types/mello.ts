@@ -46,6 +46,8 @@ export interface TimeSlot {
   clock: string;
   title: string;
   body: string;
+  illustration: string;
+  tabIllustration: string;
 }
 
 export interface Spot {
@@ -54,6 +56,7 @@ export interface Spot {
   title: string;
   body: string;
   tags: [string, string];
+  illustration: string;
 }
 
 export interface Review {

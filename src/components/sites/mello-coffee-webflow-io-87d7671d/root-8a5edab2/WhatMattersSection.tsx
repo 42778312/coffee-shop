@@ -8,63 +8,162 @@ const lines = [
   { label: "Warm pastries", value: "Yes pls" },
 ];
 
+function ReceiptCircles({ edge }: { edge: "top" | "bottom" }) {
+  return (
+    <div
+      className={`pointer-events-none absolute inset-x-[-8px] flex items-center gap-2 ${
+        edge === "top" ? "top-[-8px]" : "bottom-[-8px]"
+      }`}
+      aria-hidden
+    >
+      {Array.from({ length: 16 }, (_, i) => (
+        <span
+          key={i}
+          className="size-4 shrink-0 rounded-full bg-[#284010]"
+        />
+      ))}
+    </div>
+  );
+}
+
 export function WhatMattersSection() {
   return (
-    <section className="bg-[#284010] px-5 py-20 text-[#e9ebdf] md:px-10 md:py-24">
-      <div className="mx-auto grid max-w-[1180px] items-center gap-12 lg:grid-cols-[1.1fr_0.9fr]">
-        <div>
-          <p className="font-hand text-[22px]">What matters</p>
-          <h2 className="mt-3 text-[48px] leading-[0.95] tracking-[-0.8px] md:text-[72px] md:leading-[72px]">
-            Things that make mornings feel better.
-          </h2>
-          <p className="mt-5 max-w-[460px] text-[16px] font-medium text-[#e9ebdf]/85">
-            We started Mello to make specialty coffee feel less serious and a
-            lot more human.
-          </p>
-          <div className="mt-8 flex flex-wrap gap-3">
-            <MelloButton href="#reviews">Read reviews</MelloButton>
-            <MelloButton href="https://google.com/maps" variant="ghostOnDark">
+    <section className="overflow-hidden bg-[#284010] px-5 py-20 text-[#e9ebdf] md:px-8 md:py-[128px] lg:overflow-visible lg:px-16 lg:py-[160px]">
+      <div className="mx-auto flex w-full max-w-[1328px] flex-col items-center gap-20 md:gap-[120px] lg:flex-row lg:gap-4">
+        <div className="flex w-full flex-col items-start gap-8">
+          <div className="flex w-full flex-col items-start gap-4 md:gap-6">
+            <div className="flex w-full flex-col items-start gap-3 md:gap-4">
+              <div className="flex items-center gap-2.5 md:gap-3">
+                <span className="size-2 shrink-0 rounded-full bg-[#78bf30]" />
+                <p className="font-hand text-[18px] leading-[1.04] md:text-[21px]">
+                  What matters
+                </p>
+              </div>
+              <h2 className="max-w-[288px] text-[48px] leading-none tracking-[-0.01em] md:max-w-[408px] md:text-[68px] lg:max-w-[480px] lg:text-[80px]">
+                Things that make mornings{" "}
+                <span className="text-[#78bf30]">feel better.</span>
+              </h2>
+            </div>
+            <p className="max-w-[360px] text-[18px] font-medium leading-[1.44] tracking-[-0.01em]">
+              We started Mello to make specialty coffee feel less serious and a
+              lot more human.
+            </p>
+          </div>
+          <div className="flex w-full flex-col items-stretch gap-3 md:flex-row md:items-center md:justify-start">
+            <MelloButton href="#reviews" className="w-full md:w-auto">
+              Read reviews
+            </MelloButton>
+            <MelloButton
+              href="https://google.com/maps"
+              variant="ghostOnDark"
+              className="w-full md:w-auto"
+              target="_blank"
+              rel="noreferrer"
+            >
               Get directions
             </MelloButton>
           </div>
         </div>
 
-        <article className="relative overflow-hidden rounded-[24px] bg-[#e9ebdf] p-7 text-[#284010]">
-          <div className="flex items-center justify-between">
-            <span className="font-heading text-[32px] leading-none">Mello</span>
-            <span className="text-[13px] font-medium">Morning mood office</span>
+        <div className="flex w-full shrink-0 justify-center lg:w-auto">
+          <div className="relative w-full max-w-[360px]">
+            <article className="relative flex w-full flex-col gap-10 bg-[#e9ebdf] px-6 py-10 text-[#284010] md:px-7">
+              <ReceiptCircles edge="top" />
+              <ReceiptCircles edge="bottom" />
+
+              <div className="flex w-full flex-col gap-4">
+                <div className="flex items-start gap-6">
+                  <div className="flex w-full flex-col items-start gap-2">
+                    <a
+                      href="/"
+                      className="font-heading text-[40px] leading-none tracking-[-0.01em] md:text-[48px]"
+                    >
+                      Mello
+                    </a>
+                    <p className="font-hand text-[16px] leading-[1.04]">
+                      Morning mood office
+                    </p>
+                  </div>
+                  <img
+                    src={img("illustration-14.svg")}
+                    alt=""
+                    className="w-12 shrink-0"
+                  />
+                </div>
+
+                <div className="h-[3px] bg-[#284010]/10" />
+
+                <div className="flex flex-col gap-2.5">
+                  {lines.map((row) => (
+                    <div
+                      key={row.label}
+                      className="flex items-center justify-between gap-6"
+                    >
+                      <p className="min-w-0 flex-1 text-[14px] font-medium leading-[1.44] tracking-[-0.01em]">
+                        {row.label}
+                      </p>
+                      <span className="shrink-0 text-[14px] font-bold leading-none tracking-[-0.02em]">
+                        {row.value}
+                      </span>
+                    </div>
+                  ))}
+                </div>
+
+                <div className="h-[3px] bg-[#284010]/10" />
+
+                <div className="flex items-end justify-between gap-6">
+                  <p className="min-w-0 flex-1 text-[14px] font-medium leading-[1.44] tracking-[-0.01em]">
+                    Total
+                  </p>
+                  <p className="font-heading shrink-0 text-[21px] leading-none tracking-[-0.01em] md:text-[24px]">
+                    One good day
+                  </p>
+                </div>
+
+                <div className="h-[3px] bg-[#284010]/10" />
+              </div>
+
+              <div className="flex flex-col items-center gap-3">
+                <img
+                  src={img("barcode.svg")}
+                  alt=""
+                  className="h-12 w-[200px]"
+                />
+                <div className="flex items-center gap-2">
+                  <img
+                    src={img("illustration-1.svg")}
+                    alt=""
+                    className="size-2.5"
+                  />
+                  <p className="pt-0.5 font-hand text-[16px] leading-[1.04]">
+                    Thank you!
+                  </p>
+                </div>
+              </div>
+            </article>
+
+            <img
+              src={img("illustration-1b.svg")}
+              alt=""
+              className="receipt-1-illu pointer-events-none absolute bottom-20 left-[-160px] hidden w-20 md:block"
+            />
+            <img
+              src={img("illustration-1b.svg")}
+              alt=""
+              className="receipt-2-illu pointer-events-none absolute bottom-[130px] left-[-208px] hidden w-10 md:block"
+            />
+            <img
+              src={img("illustration-1b.svg")}
+              alt=""
+              className="receipt-3-illu pointer-events-none absolute bottom-[170px] left-[-160px] hidden w-6 md:block"
+            />
+            <img
+              src={img("illustration-26.svg")}
+              alt=""
+              className="receipt-4-illu pointer-events-none absolute top-[-48px] right-[-80px] hidden w-12 md:block lg:hidden"
+            />
           </div>
-          <ul className="mt-8 space-y-3 text-[16px] font-medium">
-            {lines.map((row) => (
-              <li
-                key={row.label}
-                className="flex items-baseline justify-between border-b border-[#284010]/15 pb-3"
-              >
-                <span>{row.label}</span>
-                <span>{row.value}</span>
-              </li>
-            ))}
-          </ul>
-          <div className="mt-6 flex items-end justify-between">
-            <div>
-              <p className="text-[13px] font-medium opacity-70">Total</p>
-              <p className="font-heading text-[28px] leading-none">
-                One good day
-              </p>
-            </div>
-            <p className="font-hand text-[22px]">Thank you!</p>
-          </div>
-          <img
-            src={img("barcode.svg")}
-            alt=""
-            className="mt-6 h-12 w-full object-contain object-left"
-          />
-          <img
-            src={img("illustration-14.svg")}
-            alt=""
-            className="absolute -right-2 -top-2 w-16"
-          />
-        </article>
+        </div>
       </div>
     </section>
   );

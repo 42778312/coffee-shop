@@ -162,20 +162,81 @@
 @keyframes mello-doodle-float {
   0%,
   100% {
-    transform: translate3d(0, 0, 0) rotate(-10deg);
+    transform: translate3d(0, 0, 0) rotate(var(--mello-doodle-rotate, -10deg));
   }
   50% {
-    transform: translate3d(0, -10px, 0) rotate(-4deg);
+    transform: translate3d(0, -10px, 0)
+      rotate(calc(var(--mello-doodle-rotate, -10deg) + 6deg));
   }
 }
 
 .hero-1-illu,
-.hero-2-illu {
-  transform: rotate(-10deg);
+.hero-2-illu,
+.receipt-1-illu,
+.receipt-2-illu,
+.receipt-3-illu {
+  --mello-doodle-rotate: -10deg;
+  transform: rotate(var(--mello-doodle-rotate));
   animation: mello-doodle-float 4.5s ease-in-out infinite;
 }
 
 .hero-2-illu {
   animation-duration: 5.5s;
   animation-direction: reverse;
+}
+
+.receipt-2-illu {
+  --mello-doodle-rotate: 20deg;
+  animation-duration: 5.2s;
+  animation-direction: reverse;
+}
+
+.receipt-3-illu {
+  animation-duration: 3.8s;
+}
+
+.receipt-4-illu {
+  transform: rotate(-10deg);
+}
+
+.visit-section-1 {
+  --mello-doodle-rotate: 10deg;
+  transform: rotate(var(--mello-doodle-rotate));
+  animation: mello-doodle-float 4.5s ease-in-out infinite;
+}
+
+.visit-section-2 {
+  --mello-doodle-rotate: -30deg;
+  transform: rotate(var(--mello-doodle-rotate));
+  animation: mello-doodle-float 5.2s ease-in-out infinite reverse;
+}
+
+.visit-illu-default,
+.visit-illu-abs {
+  transition: opacity 300ms;
+}
+
+.visit-illu-abs {
+  opacity: 0;
+}
+
+.visit-contact:hover,
+.visit-contact:focus-visible {
+  background-color: #284010;
+  color: #e9ebdf;
+}
+
+.visit-contact:focus-visible {
+  outline: 2px solid #e9ebdf;
+  outline-offset: 2px;
+}
+
+.visit-contact:hover .visit-illu-default,
+.visit-contact:focus-visible .visit-illu-default {
+  opacity: 0;
+}
+
+.visit-contact:hover .visit-illu-abs,
+.visit-contact:focus-visible .visit-illu-abs {
+  opacity: 1;
 }

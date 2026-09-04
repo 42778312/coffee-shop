@@ -1,77 +1,175 @@
 "use client";
 
 import { useState } from "react";
+import { cn } from "@/lib/utils";
 import { img } from "./assets";
 import { spots } from "./content";
+
+const hotspotClass = [
+  "bottom-5 left-[30px] md:bottom-[50px] md:left-10 min-[992px]:bottom-20 min-[992px]:left-10",
+  "bottom-[100px] left-[30px] md:bottom-[124px] md:left-auto md:right-[300px] min-[992px]:bottom-[174px] min-[992px]:right-[360px]",
+  "bottom-[60px] left-[200px] md:bottom-[180px] md:left-[60px] min-[992px]:bottom-[230px] min-[992px]:left-10",
+  "top-[120px] left-[110px] md:top-[212px] md:left-[184px] min-[992px]:top-[280px] min-[992px]:left-[200px]",
+] as const;
 
 export function PlaceSection() {
   const [active, setActive] = useState(spots[0].id);
   const current = spots.find((s) => s.id === active) ?? spots[0];
 
-  return (
-    <section id="place" className="px-5 py-20 md:px-10 md:py-24">
-      <div className="mx-auto max-w-[1180px]">
-        <p className="font-hand text-[22px]">Take a seat</p>
-        <h2 className="mt-3 max-w-[720px] text-[48px] leading-[0.95] tracking-[-0.8px] md:text-[80px] md:leading-[80px]">
-          Pull up a chair. You’re staying
-        </h2>
-        <p className="mt-4 max-w-[420px] text-[16px] font-medium">
-          Come for something good and stay as long as you like.
-        </p>
+  function activate(id: string) {
+    setActive(id);
+    document.getElementById(`place-tab-${id}`)?.focus();
+  }
 
-        <div className="mt-12 grid gap-6 lg:grid-cols-[1.3fr_0.7fr]">
-          <div className="relative min-h-[420px] overflow-hidden rounded-[24px]">
+  return (
+    <section
+      id="place"
+      className="px-5 py-20 md:px-8 md:py-[128px] lg:px-16 lg:py-[160px]"
+    >
+      <div className="mx-auto flex w-full max-w-[1328px] flex-col gap-20">
+        <div className="flex flex-col gap-4 md:gap-6 min-[992px]:grid min-[992px]:grid-cols-4 min-[992px]:items-end min-[992px]:gap-4">
+          <div className="flex flex-col gap-3 md:gap-4 min-[992px]:col-span-3">
+            <div className="flex items-center gap-2.5 md:gap-3">
+              <span className="size-2 shrink-0 rounded-full bg-[#78bf30]" />
+              <p className="font-hand text-[18px] leading-[1.04] md:text-[21px]">
+                Take a seat
+              </p>
+            </div>
+            <h2 className="max-w-[288px] text-[48px] leading-none tracking-[-0.01em] md:max-w-[408px] md:text-[68px] min-[992px]:max-w-[480px] min-[992px]:text-[80px]">
+              Pull up a chair. You’re staying
+            </h2>
+          </div>
+          <p className="max-w-[264px] text-[18px] font-medium leading-[1.44] tracking-[-0.01em]">
+            Come for something good and stay as long as you like.
+          </p>
+        </div>
+
+        <div className="flex flex-col-reverse overflow-hidden rounded-[24px] border-[3px] border-[#284010] bg-[#78bf30] min-[992px]:grid min-[992px]:h-[670px] min-[992px]:grid-cols-3">
+          <div className="relative aspect-[4/3] overflow-hidden min-[992px]:col-span-2 min-[992px]:aspect-auto min-[992px]:h-full">
             <img
               src={img("coffee-shop.avif")}
               alt="Bright coffee shop interior with wooden stools, green tile counter, pastries, and barista at espresso machine."
               className="absolute inset-0 size-full object-cover"
             />
-            <div className="absolute inset-x-0 bottom-0 bg-gradient-to-t from-[#284010]/80 to-transparent p-7 text-[#e9ebdf]">
-              <p className="text-[13px] font-medium opacity-80">
-                {current.index}/04
-              </p>
-              <h3 className="mt-2 text-[40px] leading-[40px] tracking-[-0.4px]">
-                {current.title}
-              </h3>
-              <p className="mt-3 max-w-[420px] text-[16px] font-medium">
-                {current.body}
-              </p>
-              <div className="mt-4 flex gap-2">
-                {current.tags.map((tag) => (
-                  <span
-                    key={tag}
-                    className="rounded-full bg-[#e9ebdf]/20 px-3 py-1 text-[13px] font-medium"
-                  >
-                    {tag}
-                  </span>
-                ))}
-              </div>
-            </div>
-          </div>
-
-          <ol className="flex flex-col gap-2">
-            {spots.map((spot) => {
+            {spots.map((spot, index) => {
               const on = spot.id === active;
               return (
-                <li key={spot.id}>
-                  <button
-                    type="button"
-                    onClick={() => setActive(spot.id)}
-                    className={`flex w-full items-center gap-4 rounded-[20px] px-5 py-4 text-left transition ${
-                      on
-                        ? "bg-[#78bf30] text-[#284010]"
-                        : "bg-[#284010]/5 hover:bg-[#284010]/10"
-                    }`}
+                <button
+                  key={spot.id}
+                  type="button"
+                  aria-label={`${spot.index} ${spot.title}`}
+                  aria-pressed={on}
+                  onClick={() => activate(spot.id)}
+                  className={cn(
+                    "absolute z-[1] flex cursor-pointer items-center justify-center rounded-full border-0 bg-[#e9ebdf]/20 text-[#284010]",
+                    on && "p-1 md:p-1.5",
+                    hotspotClass[index],
+                  )}
+                >
+                  <span
+                    className={cn(
+                      "flex size-10 items-center justify-center overflow-hidden rounded-full border-[3px] border-[#e9ebdf] text-[14px] leading-none font-bold tracking-[-0.02em] md:size-12",
+                      on ? "bg-[#78bf30]" : "bg-[#e9ebdf]",
+                    )}
                   >
-                    <span className="text-[13px] font-medium opacity-70">
-                      {spot.index}
-                    </span>
-                    <span className="font-medium">{spot.title}</span>
-                  </button>
-                </li>
+                    {spot.index}
+                  </span>
+                </button>
               );
             })}
-          </ol>
+          </div>
+
+          <div className="flex flex-col min-[992px]:h-full">
+            <div
+              key={current.id}
+              role="tabpanel"
+              id={`place-panel-${current.id}`}
+              aria-labelledby={`place-tab-${current.id}`}
+              className="flex h-[360px] flex-col justify-between p-7 min-[480px]:h-[296px] min-[992px]:h-[400px]"
+            >
+              <p className="font-hand text-[16px] leading-[1.04] text-[#284010]/80">
+                {current.index}/04
+              </p>
+              <div className="flex w-full flex-col gap-8 min-[480px]:flex-row-reverse min-[480px]:items-start min-[992px]:flex-col">
+                <img
+                  src={current.illustration}
+                  alt=""
+                  className="w-16 shrink-0"
+                />
+                <div className="flex min-w-0 flex-1 flex-col gap-5">
+                  <div className="flex flex-col gap-2">
+                    <h3 className="max-w-[192px] text-[32px] leading-none tracking-[-0.01em] md:max-w-[240px] md:text-[40px]">
+                      {current.title}
+                    </h3>
+                    <p className="max-w-[264px] text-[14px] font-medium leading-[1.44] tracking-[-0.01em]">
+                      {current.body}
+                    </p>
+                  </div>
+                  <div className="flex items-center gap-4">
+                    {current.tags.map((tag) => (
+                      <span
+                        key={tag}
+                        className="font-hand text-[16px] leading-[1.04]"
+                      >
+                        {tag}
+                      </span>
+                    ))}
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div
+              className="flex flex-col min-[992px]:mt-auto"
+              role="tablist"
+              aria-label="Seating spots"
+            >
+              {spots.map((spot, index) => {
+                const on = spot.id === active;
+                return (
+                  <button
+                    key={spot.id}
+                    type="button"
+                    role="tab"
+                    id={`place-tab-${spot.id}`}
+                    aria-selected={on}
+                    aria-controls={`place-panel-${spot.id}`}
+                    tabIndex={on ? 0 : -1}
+                    onClick={() => setActive(spot.id)}
+                    onKeyDown={(event) => {
+                      if (
+                        event.key !== "ArrowDown" &&
+                        event.key !== "ArrowUp" &&
+                        event.key !== "ArrowRight" &&
+                        event.key !== "ArrowLeft"
+                      ) {
+                        return;
+                      }
+                      event.preventDefault();
+                      const next =
+                        event.key === "ArrowDown" || event.key === "ArrowRight"
+                          ? (index + 1) % spots.length
+                          : (index - 1 + spots.length) % spots.length;
+                      activate(spots[next].id);
+                    }}
+                    className={cn(
+                      "flex cursor-pointer items-center gap-3 border-t-[3px] border-[#284010]/10 px-7 py-5 text-left transition-colors duration-300",
+                      on
+                        ? "bg-[#284010] text-[#e9ebdf]"
+                        : "bg-transparent text-[#284010]/80 hover:text-[#284010]",
+                    )}
+                  >
+                    <span className="font-hand shrink-0 text-[16px] leading-[1.04]">
+                      {spot.index}
+                    </span>
+                    <span className="font-heading text-[21px] leading-none tracking-[-0.01em] md:text-[24px]">
+                      {spot.title}
+                    </span>
+                  </button>
+                );
+              })}
+            </div>
+          </div>
         </div>
       </div>
     </section>

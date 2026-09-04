@@ -16,15 +16,21 @@ export function MelloButton({
   children,
   variant = "primary",
   className,
+  target,
+  rel,
 }: {
   href: string;
   children: React.ReactNode;
   variant?: Variant;
   className?: string;
+  target?: string;
+  rel?: string;
 }) {
   return (
     <a
       href={href}
+      target={target}
+      rel={rel ?? (target === "_blank" ? "noreferrer" : undefined)}
       className={cn(
         "inline-flex h-[66px] items-center justify-center rounded-[20px] px-7 text-[18px] font-medium leading-none transition",
         variants[variant],

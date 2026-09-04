@@ -205,6 +205,8 @@ export const timeSlots: TimeSlot[] = [
     clock: "07:03",
     title: "First sip",
     body: "Doors open. Espresso machine sings. The day suddenly looks possible.",
+    illustration: img("illustration-4.svg"),
+    tabIllustration: img("time-tab-4.svg"),
   },
   {
     id: "power",
@@ -213,6 +215,8 @@ export const timeSlots: TimeSlot[] = [
     clock: "10:12",
     title: "Power up",
     body: "You came for coffee. You left with a cinnamon bun. Excellent decision.",
+    illustration: img("illustration-11.svg"),
+    tabIllustration: img("time-tab-11.svg"),
   },
   {
     id: "afternoon",
@@ -221,6 +225,8 @@ export const timeSlots: TimeSlot[] = [
     clock: "14:47",
     title: "Iced o’clock",
     body: "The inbox is winning. Matcha enters the chat and turns things around.",
+    illustration: img("illustration-12.svg"),
+    tabIllustration: img("time-tab-12.svg"),
   },
   {
     id: "treat",
@@ -229,6 +235,8 @@ export const timeSlots: TimeSlot[] = [
     clock: "17:31",
     title: "One more?",
     body: "One last espresso before home. Good days deserve a strong finish.",
+    illustration: img("illustration-13.svg"),
+    tabIllustration: img("time-tab-13.svg"),
   },
 ];
 
@@ -239,6 +247,7 @@ export const spots: Spot[] = [
     title: "Catch the sun",
     body: "Grab a warm seat, order your favorite, and let the morning take its time.",
     tags: ["#beforenoon", "#sunnyspot"],
+    illustration: img("spot-illu-5.svg"),
   },
   {
     id: "action",
@@ -246,6 +255,7 @@ export const spots: Spot[] = [
     title: "Close to the action",
     body: "Take a counter seat and see every drink come together from start to finish.",
     tags: ["#Social", "#Lively"],
+    illustration: img("illustration-15.svg"),
   },
   {
     id: "hide",
@@ -253,6 +263,7 @@ export const spots: Spot[] = [
     title: "Hide out here",
     body: "Your tucked-away spot for quiet sips, focused work, and slower moments.",
     tags: ["#1seat", "#laptopfriendly"],
+    illustration: img("illustration-16.svg"),
   },
   {
     id: "crew",
@@ -260,6 +271,7 @@ export const spots: Spot[] = [
     title: "Bring the whole crew",
     body: "Grab the big table and fill it with coffee, stories, and your favorite people.",
     tags: ["#Social", "#Spacious"],
+    illustration: img("illustration-17.svg"),
   },
 ];
 
@@ -268,11 +280,17 @@ export const reviews: Review[] = [
     rating: "4.9",
     name: "Mia Carter",
     quote:
-      "Everything you want from a neighborhood coffee shop: warm, welcoming, and always worth the walk.",
+      "Come for the great coffee, stay for the perfect playlist and those cinnamon buns you’ll keep thinking about.",
   },
   {
     rating: "5.0",
     name: "Jamie Brooks",
+    quote:
+      "Everything you want from a neighborhood coffee shop: warm, welcoming, and always worth the walk.",
+  },
+  {
+    rating: "5.0",
+    name: "Alex Morgan",
     quote:
       "The cold brew is smooth, the space feels effortless, and everyone behind the counter is genuinely lovely.",
   },

@@ -26,16 +26,30 @@ export function HeroSection() {
   const imageY = useTransform(scrollYProgress, [0, 1], ["-6%", "6%"]);
 
   return (
-    <section className="relative flex h-[100svh] min-h-[800px] max-h-[880px] flex-col items-center overflow-hidden px-8 pt-[228px] md:max-h-[1200px] md:min-h-[880px] md:px-10 md:pt-[252px] lg:h-screen lg:min-h-[760px] lg:pt-[184px]">
-      <img
-        src={img("illustration-4.svg")}
-        alt=""
-        className="hero-1-illu pointer-events-none absolute top-[120px] left-[max(12px,calc(50%-560px))] hidden w-[140px] xl:block 2xl:w-[167px]"
+    <section className="relative flex h-[100svh] min-h-[800px] max-h-[880px] flex-col items-center overflow-hidden bg-[#EAF3F1] px-8 pt-[228px] md:max-h-[1200px] md:min-h-[880px] md:px-10 md:pt-[252px] lg:h-screen lg:min-h-[760px] lg:pt-[184px]">
+      <span
+        aria-hidden
+        className="hero-1-illu pointer-events-none absolute top-[120px] left-[max(12px,calc(50%-560px))] hidden aspect-square w-[140px] bg-[#4C7A3D] xl:block 2xl:w-[167px]"
+        style={{
+          WebkitMaskImage: `url(${img("illustration-4.svg")})`,
+          maskImage: `url(${img("illustration-4.svg")})`,
+          WebkitMaskRepeat: "no-repeat",
+          maskRepeat: "no-repeat",
+          WebkitMaskSize: "contain",
+          maskSize: "contain",
+        }}
       />
-      <img
-        src={img("illustration-5.svg")}
-        alt=""
-        className="hero-2-illu pointer-events-none absolute top-[180px] right-[max(12px,calc(50%-580px))] hidden w-[160px] xl:block 2xl:w-[195px]"
+      <span
+        aria-hidden
+        className="hero-2-illu pointer-events-none absolute top-[180px] right-[max(12px,calc(50%-580px))] hidden aspect-square w-[160px] bg-[#4C7A3D] xl:block 2xl:w-[195px]"
+        style={{
+          WebkitMaskImage: `url(${img("illustration-5.svg")})`,
+          maskImage: `url(${img("illustration-5.svg")})`,
+          WebkitMaskRepeat: "no-repeat",
+          maskRepeat: "no-repeat",
+          WebkitMaskSize: "contain",
+          maskSize: "contain",
+        }}
       />
 
       <motion.div
@@ -44,11 +58,18 @@ export function HeroSection() {
         variants={stagger}
         className="relative z-10 mx-auto flex w-full max-w-[760px] flex-col items-center text-center"
       >
-        <motion.img
+        <motion.span
           variants={item}
-          src={img("illustration-4.svg")}
-          alt=""
-          className="pointer-events-none mb-4 w-14 -rotate-[10deg] md:mb-6 md:w-20 xl:hidden"
+          aria-hidden
+          className="pointer-events-none mb-4 block aspect-square w-14 -rotate-[10deg] bg-[#4C7A3D] md:mb-6 md:w-20 xl:hidden"
+          style={{
+            WebkitMaskImage: `url(${img("illustration-4.svg")})`,
+            maskImage: `url(${img("illustration-4.svg")})`,
+            WebkitMaskRepeat: "no-repeat",
+            maskRepeat: "no-repeat",
+            WebkitMaskSize: "contain",
+            maskSize: "contain",
+          }}
         />
         <motion.h1
           variants={item}
@@ -80,18 +101,16 @@ export function HeroSection() {
         initial={{ opacity: 0, y: 32 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.8, ease: EASE, delay: 0.45 }}
-        className="relative mx-auto mt-14 min-h-0 w-full max-w-[1200px] flex-1 sm:mt-14 md:mt-16"
+        className="relative mx-auto mt-10 min-h-0 w-full max-w-[860px] flex-1 sm:mt-10 md:mt-12"
       >
-        <div className="absolute inset-0 overflow-hidden">
-          <motion.img
-            src={img("cold-matcha.avif")}
-            alt="Clear glass filled with iced green matcha tea, condensation on glass surface."
-            className="absolute inset-0 size-full object-cover object-[center_20%] md:object-[center_30%]"
-            style={{ y: imageY, scale: 1.12 }}
-          />
-        </div>
+        <motion.img
+          src="/images/glass.avif"
+          alt="Clear glass filled with iced green matcha tea, condensation on glass surface."
+          className="absolute inset-x-0 top-0 mx-auto w-full max-w-[720px] object-contain md:max-w-[820px]"
+          style={{ y: imageY }}
+        />
 
-        <div className="absolute top-8 left-8 z-10 hidden max-w-[180px] flex-col gap-3 border-l-[2.67px] border-[#AAD0C8] pl-4 md:flex">
+        <div className="absolute top-16 left-0 z-10 hidden max-w-[180px] flex-col gap-3 border-l-[2.67px] border-[#1F3D38]/30 pl-4 md:flex">
           <div className="flex flex-col gap-0.5">
             <p className="font-heading text-[24px] leading-6 tracking-[-0.24px] text-[#1F3D38]">
               Cold matcha
@@ -115,10 +134,10 @@ export function HeroSection() {
         <img
           src={img("illustration-2.svg")}
           alt=""
-          className="pointer-events-none absolute top-10 left-[220px] hidden w-[93px] rotate-[10deg] md:block"
+          className="pointer-events-none absolute top-24 left-[190px] hidden w-[70px] rotate-[10deg] md:block"
         />
 
-        <div className="absolute -top-5 right-4 z-10 flex rotate-[10deg] items-center gap-2.5 sm:-top-5 sm:right-6 md:top-8 md:right-4 xl:right-8">
+        <div className="absolute -top-10 right-0 z-10 flex rotate-[10deg] items-center gap-2.5 md:top-12">
           <img
             src={img("illustration-3.svg")}
             alt=""

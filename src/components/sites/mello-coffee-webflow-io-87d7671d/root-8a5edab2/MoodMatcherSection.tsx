@@ -6,6 +6,7 @@ import { cn } from "@/lib/utils";
 import { img } from "./assets";
 import { moods } from "./content";
 import { Reveal } from "./Reveal";
+import { SplitHeading } from "./SplitHeading";
 
 const quadrants = [
   {
@@ -40,7 +41,7 @@ export function MoodMatcherSection() {
   const arrow = quadrants.find((q) => q.id === active)?.rotate ?? -135;
 
   return (
-    <section className="overflow-hidden bg-[#1F3D38] px-8 py-32 text-[#FFFFFF] md:px-8 md:py-[128px] lg:px-16 lg:py-[160px]">
+    <section className="overflow-hidden bg-[#1F3D38] px-8 py-32 text-[#FFFFFF] md:px-16 md:py-[128px] lg:py-[160px]">
       <div className="mx-auto flex w-full max-w-[1328px] flex-col gap-16 md:gap-[120px] lg:gap-20">
         <div className="relative flex items-center">
           <div className="flex w-full flex-col items-start gap-3 md:gap-4">
@@ -50,13 +51,12 @@ export function MoodMatcherSection() {
                 Mood matcher
               </p>
             </Reveal>
-            <Reveal
+            <SplitHeading
               as="h2"
               delay={0.08}
+              segments={["What are you in the mood for?"]}
               className="max-w-[288px] text-[48px] leading-none tracking-[-0.01em] md:max-w-[408px] md:text-[68px] lg:max-w-[480px] lg:text-[80px]"
-            >
-              What are you in the mood for?
-            </Reveal>
+            />
           </div>
           <img
             src={img("illustration-10.svg")}

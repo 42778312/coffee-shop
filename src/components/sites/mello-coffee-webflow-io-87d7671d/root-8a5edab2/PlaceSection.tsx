@@ -6,6 +6,7 @@ import { cn } from "@/lib/utils";
 import { img } from "./assets";
 import { spots } from "./content";
 import { Reveal } from "./Reveal";
+import { SplitHeading } from "./SplitHeading";
 
 const hotspotClass = [
   "bottom-5 left-[30px]",
@@ -26,7 +27,7 @@ export function PlaceSection() {
   return (
     <section
       id="place"
-      className="px-8 py-32 md:px-8 md:py-[128px] lg:px-16 lg:py-[160px]"
+      className="px-8 py-32 md:px-16 md:py-[128px] lg:py-[160px]"
     >
       <div className="mx-auto flex w-full max-w-[1328px] flex-col gap-20">
         <div className="flex flex-col gap-4 md:gap-6 min-[992px]:grid min-[992px]:grid-cols-4 min-[992px]:items-end min-[992px]:gap-4">
@@ -37,13 +38,12 @@ export function PlaceSection() {
                 Take a seat
               </p>
             </Reveal>
-            <Reveal
+            <SplitHeading
               as="h2"
               delay={0.08}
+              segments={["Pull up a chair. You’re staying"]}
               className="max-w-[288px] text-[48px] leading-none tracking-[-0.01em] md:max-w-[408px] md:text-[68px] min-[992px]:max-w-[480px] min-[992px]:text-[80px]"
-            >
-              Pull up a chair. You’re staying
-            </Reveal>
+            />
           </div>
           <Reveal
             as="p"

@@ -4,6 +4,7 @@ import { motion } from "motion/react";
 import { img } from "./assets";
 import { cn } from "@/lib/utils";
 import { Reveal } from "./Reveal";
+import { SplitHeading } from "./SplitHeading";
 
 function PhotoCard({
   src,
@@ -74,13 +75,12 @@ export function VisitSection() {
               See you soon
             </p>
           </Reveal>
-          <Reveal
+          <SplitHeading
             as="h2"
             delay={0.08}
+            segments={["Take a peek. Come on over"]}
             className="max-w-[288px] text-center text-[40px] leading-none tracking-[-0.01em] sm:text-[48px] md:max-[991px]:max-w-[408px] md:max-[991px]:text-[68px] min-[992px]:max-w-[480px] min-[992px]:text-[80px]"
-          >
-            Take a peek. Come on over
-          </Reveal>
+          />
           <img
             src={img("illustration-23.svg")}
             alt=""

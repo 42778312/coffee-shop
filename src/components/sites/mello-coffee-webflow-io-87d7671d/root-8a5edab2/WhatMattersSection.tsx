@@ -1,6 +1,7 @@
 import { img } from "./assets";
 import { MelloButton } from "./MelloButton";
 import { Reveal } from "./Reveal";
+import { SplitHeading } from "./SplitHeading";
 
 const lines = [
   { label: "Kind humans", value: "Always" },
@@ -29,7 +30,7 @@ function ReceiptCircles({ edge }: { edge: "top" | "bottom" }) {
 
 export function WhatMattersSection() {
   return (
-    <section className="overflow-hidden bg-[#1F3D38] px-8 py-32 text-[#FFFFFF] md:px-8 md:py-[128px] lg:px-16 lg:py-[160px]">
+    <section className="overflow-hidden bg-[#1F3D38] px-8 py-32 text-[#FFFFFF] md:px-16 md:py-[128px] lg:py-[160px]">
       <div className="mx-auto flex w-full max-w-[1328px] flex-col items-center gap-20 md:gap-[120px] lg:flex-row lg:gap-4">
         <div className="flex w-full min-w-0 flex-col items-start gap-8">
           <div className="flex w-full flex-col items-start gap-4 md:gap-6">
@@ -40,14 +41,15 @@ export function WhatMattersSection() {
                   What matters
                 </p>
               </Reveal>
-              <Reveal
+              <SplitHeading
                 as="h2"
                 delay={0.08}
+                segments={[
+                  "Things that make mornings",
+                  { text: "feel better.", className: "text-[#AAD0C8]" },
+                ]}
                 className="max-w-[288px] text-[48px] leading-none tracking-[-0.01em] md:max-w-[408px] md:text-[68px] lg:max-w-[480px] lg:text-[80px]"
-              >
-                Things that make mornings{" "}
-                <span className="text-[#AAD0C8]">feel better.</span>
-              </Reveal>
+              />
             </div>
             <Reveal
               as="p"

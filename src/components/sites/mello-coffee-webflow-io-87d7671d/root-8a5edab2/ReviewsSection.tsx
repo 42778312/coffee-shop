@@ -209,7 +209,7 @@ export function ReviewsSection() {
       }}
       className="relative flex min-h-[640px] items-stretch justify-center bg-[#AAD0C8] py-16 text-[#1F3D38] sm:min-h-[720px] sm:py-20 md:min-h-[760px] min-[992px]:h-screen"
     >
-      <div className="mx-auto flex w-full max-w-[1328px] flex-1 flex-col px-5 md:px-8 min-[992px]:px-16">
+      <div className="mx-auto flex w-full max-w-[1328px] flex-1 flex-col px-5 md:px-16">
         <Reveal
           as="div"
           variant="fadeIn"

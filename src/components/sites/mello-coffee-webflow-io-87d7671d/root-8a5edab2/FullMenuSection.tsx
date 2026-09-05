@@ -1,10 +1,11 @@
 import { img } from "./assets";
 import { menuCategories } from "./content";
 import { Reveal, RevealGroup, RevealItem } from "./Reveal";
+import { SplitHeading } from "./SplitHeading";
 
 export function FullMenuSection() {
   return (
-    <section id="menu" className="bg-[#AAD0C8]/25 px-8 py-32 md:px-10 md:py-[128px] lg:py-[160px]">
+    <section id="menu" className="bg-[#AAD0C8]/25 px-8 py-32 md:px-16 md:py-[128px] lg:py-[160px]">
       <div className="mx-auto max-w-[1200px]">
         <div className="flex flex-col items-center gap-3 md:gap-4">
           <Reveal variant="scaleIn" as="div">
@@ -14,13 +15,12 @@ export function FullMenuSection() {
               className="w-16 md:w-24 lg:w-[120px]"
             />
           </Reveal>
-          <Reveal
+          <SplitHeading
             as="h2"
             delay={0.08}
+            segments={["The complete Mello menu"]}
             className="max-w-[288px] text-center text-[48px] leading-none tracking-[-0.01em] md:max-w-[408px] md:text-[68px] lg:max-w-[480px] lg:text-[80px]"
-          >
-            The complete Mello menu
-          </Reveal>
+          />
         </div>
 
         <RevealGroup

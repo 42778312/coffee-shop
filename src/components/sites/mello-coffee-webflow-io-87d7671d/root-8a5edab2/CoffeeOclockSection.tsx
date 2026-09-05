@@ -7,6 +7,7 @@ import { img } from "./assets";
 import { timeSlots } from "./content";
 import { MelloButton } from "./MelloButton";
 import { Reveal } from "./Reveal";
+import { SplitHeading } from "./SplitHeading";
 
 export function CoffeeOclockSection() {
   const [active, setActive] = useState(timeSlots[0].id);
@@ -19,7 +20,7 @@ export function CoffeeOclockSection() {
   }
 
   return (
-    <section className="overflow-hidden px-8 py-32 md:px-8 md:py-[128px] lg:px-16 lg:py-[160px]">
+    <section className="overflow-hidden px-8 py-32 md:px-16 md:py-[128px] lg:py-[160px]">
       <div className="mx-auto flex w-full max-w-[1328px] flex-col gap-16 lg:gap-20">
         <div className="flex flex-col gap-4 md:gap-6 lg:grid lg:grid-cols-4 lg:items-end lg:gap-4">
           <div className="flex flex-col gap-3 md:gap-4 lg:col-span-3">
@@ -29,13 +30,12 @@ export function CoffeeOclockSection() {
                 Coffee o’clock
               </p>
             </Reveal>
-            <Reveal
+            <SplitHeading
               as="h2"
               delay={0.08}
+              segments={["The right cup, right on time"]}
               className="max-w-[288px] text-[48px] leading-none tracking-[-0.01em] md:max-w-[408px] md:text-[68px] lg:max-w-[480px] lg:text-[80px]"
-            >
-              The right cup, right on time
-            </Reveal>
+            />
           </div>
           <Reveal
             as="p"

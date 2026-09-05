@@ -1,5 +1,6 @@
 import { featuredItems } from "./content";
 import { Reveal, RevealGroup, RevealItem, hoverLift } from "./Reveal";
+import { SplitHeading } from "./SplitHeading";
 import type { FeaturedItem } from "@/types/mello";
 
 function Pill({ children }: { children: string }) {
@@ -106,19 +107,18 @@ function ColorCard({ item }: { item: FeaturedItem }) {
 export function FeaturedMenuSection() {
   const [tall, wide, lime, forest] = featuredItems;
   return (
-    <section className="bg-white px-8 py-32 md:px-10 md:py-32 lg:py-40">
+    <section className="bg-white px-8 py-32 md:px-16 md:py-32 lg:py-40">
       <div className="mx-auto max-w-[1180px]">
         <Reveal as="p" className="font-hand text-[18px] text-[#1F3D38] md:text-[22px]">
           Coffee this way
         </Reveal>
         <div className="mt-3 flex flex-col gap-4 lg:mt-4 lg:flex-row lg:items-end lg:justify-between">
-          <Reveal
+          <SplitHeading
             as="h2"
             delay={0.05}
+            segments={["Choose your cup of happy"]}
             className="max-w-[288px] text-[48px] leading-none tracking-[-0.02em] md:max-w-[408px] md:text-[68px] lg:max-w-[640px] lg:text-[80px] lg:leading-[80px]"
-          >
-            Choose your cup of happy
-          </Reveal>
+          />
           <Reveal
             as="p"
             delay={0.1}

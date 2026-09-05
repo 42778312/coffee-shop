@@ -1,8 +1,10 @@
 "use client";
 
 import { useCallback, useEffect, useId, useRef, useState } from "react";
+import { motion } from "motion/react";
 import { img } from "./assets";
 import { reviews } from "./content";
+import { Reveal } from "./Reveal";
 
 const AUTOPLAY_MS = 4000;
 const SLIDE_MS = 500;
@@ -21,13 +23,13 @@ function Slide({
   name: string;
 }) {
   return (
-    <div className="flex w-full flex-col items-center gap-10 min-[480px]:gap-12">
+    <div className="flex w-full flex-col items-center gap-8 px-2 min-[480px]:gap-12">
       <img
         src={img("illustration-19.svg")}
         alt=""
-        className="w-16 min-[480px]:w-20"
+        className="w-14 min-[480px]:w-20"
       />
-      <p className="font-heading max-w-[432px] text-center text-[36px] leading-none tracking-[-0.01em] md:max-w-[576px] md:text-[48px] min-[992px]:max-w-[720px] min-[992px]:text-[60px]">
+      <p className="font-heading max-w-[432px] text-center text-[28px] leading-[1.05] tracking-[-0.01em] sm:text-[36px] sm:leading-none md:max-w-[576px] md:text-[48px] min-[992px]:max-w-[720px] min-[992px]:text-[60px]">
         {quote}
       </p>
       <div className="flex items-center gap-3">
@@ -62,11 +64,14 @@ function ArrowButton({
   const abs = direction === "prev" ? "arrow-left-abs.svg" : "arrow-right-abs.svg";
 
   return (
-    <button
+    <motion.button
       type="button"
       aria-label={label}
       aria-controls={controlsId}
       onClick={onClick}
+      whileHover={{ scale: 1.08 }}
+      whileTap={{ scale: 0.9 }}
+      transition={{ duration: 0.2 }}
       className="group relative flex size-11 shrink-0 items-center justify-center overflow-hidden rounded-full border-[3px] border-[#1F3D38] bg-transparent transition-colors duration-200 hover:bg-[#1F3D38] focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#AAD0C8]"
     >
       <img
@@ -79,7 +84,7 @@ function ArrowButton({
         alt=""
         className="absolute w-5 opacity-0 transition-opacity duration-200 group-hover:opacity-100"
       />
-    </button>
+    </motion.button>
   );
 }
 
@@ -202,10 +207,14 @@ export function ReviewsSection() {
           setHovering(false);
         }
       }}
-      className="relative flex h-screen min-h-[880px] items-stretch justify-center bg-[#AAD0C8] text-[#1F3D38] min-[992px]:min-h-[760px]"
+      className="relative flex min-h-[640px] items-stretch justify-center bg-[#AAD0C8] py-16 text-[#1F3D38] sm:min-h-[720px] sm:py-20 md:min-h-[760px] min-[992px]:h-screen"
     >
       <div className="mx-auto flex w-full max-w-[1328px] flex-1 flex-col px-5 md:px-8 min-[992px]:px-16">
-        <div className="relative flex flex-1 flex-col items-center justify-center py-12">
+        <Reveal
+          as="div"
+          variant="fadeIn"
+          className="relative flex flex-1 flex-col items-center justify-center py-12"
+        >
           <div
             id={maskId}
             className="w-full overflow-hidden select-none touch-pan-y"
@@ -249,7 +258,7 @@ export function ReviewsSection() {
             Slide {realIndex + 1} of {reviews.length}.
           </p>
 
-          <div className="absolute bottom-12 left-1/2 z-[3] flex -translate-x-1/2 items-center gap-3">
+          <div className="absolute bottom-6 left-1/2 z-[3] flex -translate-x-1/2 items-center gap-3 sm:bottom-12">
             <ArrowButton
               direction="prev"
               controlsId={maskId}
@@ -261,7 +270,7 @@ export function ReviewsSection() {
               onClick={goNext}
             />
           </div>
-        </div>
+        </Reveal>
       </div>
     </section>
   );

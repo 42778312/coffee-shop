@@ -128,20 +128,25 @@
   * {
     @apply border-border outline-ring/50;
   }
-  body {
-    @apply bg-background text-foreground;
-  }
   html {
-    @apply font-sans scroll-smooth;
+    @apply font-sans scroll-smooth overflow-x-hidden;
   }
   body {
+    @apply bg-background text-foreground min-h-full overflow-x-hidden;
     background: var(--mello-white);
     color: var(--mello-ink);
+  }
+  img,
+  svg,
+  video {
+    max-width: 100%;
   }
   h1, h2, h3, h4 {
     font-family: var(--font-heading);
     font-weight: 400;
     letter-spacing: -0.01em;
+    text-wrap: balance;
+    overflow-wrap: break-word;
   }
 }
 

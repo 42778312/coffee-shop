@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { Gochi_Hand, Inter, Londrina_Solid } from "next/font/google";
+import { MotionProvider } from "@/components/MotionProvider";
 import "./globals.css";
 
 const inter = Inter({
@@ -47,9 +48,11 @@ export default function RootLayout({
   return (
     <html
       lang="en"
-      className={`${inter.variable} ${londrina.variable} ${gochi.variable} h-full antialiased`}
+      className={`${inter.variable} ${londrina.variable} ${gochi.variable} h-full overflow-x-hidden antialiased`}
     >
-      <body className="min-h-full flex flex-col font-sans">{children}</body>
+      <body className="flex min-h-full min-w-0 flex-col overflow-x-hidden font-sans">
+        <MotionProvider>{children}</MotionProvider>
+      </body>
     </html>
   );
 }

@@ -1,5 +1,9 @@
+"use client";
+
+import { motion } from "motion/react";
 import { img } from "./assets";
 import { cn } from "@/lib/utils";
+import { Reveal } from "./Reveal";
 
 function PhotoCard({
   src,
@@ -51,7 +55,7 @@ export function VisitSection() {
   return (
     <section
       id="visit"
-      className="relative overflow-hidden bg-[#1F3D38] py-[160px] text-[#FFFFFF] md:py-[200px]"
+      className="relative overflow-hidden bg-[#1F3D38] py-24 text-[#FFFFFF] sm:py-[160px] md:py-[200px]"
     >
       <div
         aria-hidden
@@ -62,31 +66,40 @@ export function VisitSection() {
         className="pointer-events-none absolute bottom-[-56px] left-[-5px] h-[88px] w-[101%] rotate-[2deg] bg-[#AAD0C8]"
       />
 
-      <div className="relative mx-auto flex w-full max-w-[1328px] flex-col gap-20 px-8 md:px-16">
+      <div className="relative mx-auto flex w-full max-w-[1328px] flex-col gap-12 px-5 sm:gap-16 sm:px-8 md:gap-20 md:px-16">
         <div className="relative flex flex-col items-center gap-3 md:gap-4">
-          <div className="flex items-center gap-2.5 md:gap-3">
+          <Reveal className="flex items-center gap-2.5 md:gap-3">
             <span className="size-2 shrink-0 rounded-full bg-[#AAD0C8]" />
             <p className="font-hand text-[18px] leading-[1.04] md:text-[21px]">
               See you soon
             </p>
-          </div>
-          <h2 className="max-w-[288px] text-center text-[48px] leading-none tracking-[-0.01em] md:max-[991px]:max-w-[408px] md:max-[991px]:text-[68px] min-[992px]:max-w-[480px] min-[992px]:text-[80px]">
+          </Reveal>
+          <Reveal
+            as="h2"
+            delay={0.08}
+            className="max-w-[288px] text-center text-[40px] leading-none tracking-[-0.01em] sm:text-[48px] md:max-[991px]:max-w-[408px] md:max-[991px]:text-[68px] min-[992px]:max-w-[480px] min-[992px]:text-[80px]"
+          >
             Take a peek. Come on over
-          </h2>
+          </Reveal>
           <img
             src={img("illustration-23.svg")}
             alt=""
-            className="visit-section-1 pointer-events-none absolute top-2 left-5 w-[29px] min-[480px]:top-4 min-[480px]:left-[154px] min-[992px]:left-[378px]"
+            className="visit-section-1 pointer-events-none absolute top-2 -left-1 hidden w-[29px] sm:block min-[480px]:top-4 min-[480px]:left-[154px] min-[992px]:left-[378px]"
           />
           <img
             src={img("illustration-24.svg")}
             alt=""
-            className="visit-section-2 pointer-events-none absolute right-[100px] -bottom-6 hidden w-[41px] min-[480px]:block min-[992px]:right-[320px]"
+            className="visit-section-2 pointer-events-none absolute right-[100px] -bottom-6 hidden w-[41px] lg:block min-[992px]:right-[320px]"
           />
         </div>
 
-        <div className="flex flex-col-reverse gap-4 md:max-[991px]:grid md:max-[991px]:grid-cols-2 min-[992px]:grid min-[992px]:h-[600px] min-[992px]:grid-cols-12">
-          <div className="h-[480px] md:max-[991px]:col-start-1 md:max-[991px]:row-start-1 min-[992px]:col-span-4 min-[992px]:h-auto">
+        <Reveal
+          as="div"
+          delay={0.1}
+          amount={0.15}
+          className="flex flex-col-reverse gap-4 md:max-[991px]:grid md:max-[991px]:grid-cols-2 min-[992px]:grid min-[992px]:h-[600px] min-[992px]:grid-cols-12"
+        >
+          <div className="h-[320px] sm:h-[480px] md:max-[991px]:col-start-1 md:max-[991px]:row-start-1 min-[992px]:col-span-4 min-[992px]:h-auto">
             <PhotoCard
               src={img("cherry-on-top.avif")}
               alt="Glass of iced chocolate drink topped with pink whipped cream and a cherry, beside a chocolate croissant on a green plate."
@@ -95,7 +108,7 @@ export function VisitSection() {
           </div>
 
           <div className="flex flex-col-reverse gap-4 md:max-[991px]:col-span-2 md:max-[991px]:grid md:max-[991px]:grid-cols-2 min-[992px]:col-span-5 min-[992px]:flex min-[992px]:flex-col">
-            <div className="h-[360px] md:max-[991px]:col-start-2 md:max-[991px]:row-start-1 md:max-[991px]:h-full min-[992px]:h-auto min-[992px]:flex-1">
+            <div className="h-[280px] sm:h-[360px] md:max-[991px]:col-start-2 md:max-[991px]:row-start-1 md:max-[991px]:h-full min-[992px]:h-auto min-[992px]:flex-1">
               <PhotoCard
                 src={img("sweet-little-moment.avif")}
                 alt="People enjoying coffee and pastries inside a cozy café with green tiled counters and wooden stools."
@@ -104,17 +117,20 @@ export function VisitSection() {
             </div>
 
             <div className="flex flex-col gap-4 md:max-[991px]:col-start-1 md:max-[991px]:row-start-1 min-[992px]:flex-row">
-              <a
+              <motion.a
                 href="https://google.com/maps"
                 target="_blank"
                 rel="noreferrer"
-                className="visit-contact flex flex-1 items-start gap-6 rounded-[24px] border-[3px] border-[#AAD0C8] bg-[#AAD0C8] p-6 text-[#1F3D38] md:p-7"
+                whileHover={{ scale: 1.015 }}
+                whileTap={{ scale: 0.98 }}
+                transition={{ duration: 0.2 }}
+                className="visit-contact flex flex-1 items-start gap-4 rounded-[24px] border-[3px] border-[#AAD0C8] bg-[#AAD0C8] p-5 text-[#1F3D38] sm:gap-6 sm:p-6 md:p-7"
               >
                 <div className="flex h-full min-w-0 flex-1 flex-col gap-20">
                   <p className="font-hand text-[16px] leading-[1.04]">
                     Mello’s here
                   </p>
-                  <h3 className="max-w-[224px] text-[24px] leading-none tracking-[-0.01em] md:text-[28px]">
+                  <h3 className="max-w-[224px] text-[22px] leading-none tracking-[-0.01em] md:text-[28px]">
                     28 Roastery Lane, Brooklyn, NY
                   </h3>
                 </div>
@@ -123,10 +139,13 @@ export function VisitSection() {
                   abs={img("illustration-20b.svg")}
                   widthClass="w-14"
                 />
-              </a>
+              </motion.a>
 
-              <a
+              <motion.a
                 href="mailto:hi@mello.com?subject=Support"
+                whileHover={{ scale: 1.03 }}
+                whileTap={{ scale: 0.97 }}
+                transition={{ duration: 0.2 }}
                 className="visit-contact relative flex flex-row-reverse items-center justify-center gap-6 rounded-[24px] border-[3px] border-[#AAD0C8] bg-[#AAD0C8] px-6 py-7 text-[#1F3D38] min-[992px]:w-[88px] min-[992px]:shrink-0 min-[992px]:flex-col min-[992px]:px-6"
               >
                 <HoverIllu
@@ -137,7 +156,7 @@ export function VisitSection() {
                 <h3 className="flex-1 text-[24px] leading-none tracking-[-0.01em] md:text-[28px] min-[992px]:absolute min-[992px]:bottom-[60px] min-[992px]:w-[130%] min-[992px]:flex-none min-[992px]:-rotate-90">
                   Say hello!
                 </h3>
-              </a>
+              </motion.a>
             </div>
           </div>
 
@@ -157,7 +176,7 @@ export function VisitSection() {
                 className="w-10 shrink-0"
               />
             </div>
-            <div className="h-[360px] md:min-h-0 md:flex-1">
+            <div className="h-[280px] sm:h-[360px] md:min-h-0 md:flex-1">
               <PhotoCard
                 src={img("the-mello-trio.avif")}
                 alt="Iced green matcha drink with strawberries, espresso in green cup, and cinnamon roll with icing on green shapes."
@@ -165,7 +184,7 @@ export function VisitSection() {
               />
             </div>
           </div>
-        </div>
+        </Reveal>
       </div>
     </section>
   );

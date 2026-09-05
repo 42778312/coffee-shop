@@ -1,9 +1,11 @@
 "use client";
 
 import { useState } from "react";
+import { motion } from "motion/react";
 import { cn } from "@/lib/utils";
 import { img } from "./assets";
 import { moods } from "./content";
+import { Reveal } from "./Reveal";
 
 const quadrants = [
   {
@@ -38,35 +40,34 @@ export function MoodMatcherSection() {
   const arrow = quadrants.find((q) => q.id === active)?.rotate ?? -135;
 
   return (
-    <section className="overflow-hidden bg-[#1F3D38] px-5 py-20 text-[#FFFFFF] md:px-8 md:py-[128px] lg:overflow-visible lg:px-16 lg:py-[160px]">
-      <div className="mx-auto flex w-full max-w-[1328px] flex-col gap-[120px] lg:gap-20">
+    <section className="overflow-hidden bg-[#1F3D38] px-8 py-32 text-[#FFFFFF] md:px-8 md:py-[128px] lg:px-16 lg:py-[160px]">
+      <div className="mx-auto flex w-full max-w-[1328px] flex-col gap-16 md:gap-[120px] lg:gap-20">
         <div className="relative flex items-center">
-          <div className="flex w-full flex-col items-start gap-4">
-            <div className="flex items-center gap-3">
+          <div className="flex w-full flex-col items-start gap-3 md:gap-4">
+            <Reveal className="flex items-center gap-3">
               <span className="size-2 shrink-0 rounded-full bg-[#AAD0C8]" />
               <p className="font-hand text-[18px] leading-[1.04] md:text-[21px]">
                 Mood matcher
               </p>
-            </div>
-            <h2 className="max-w-[480px] text-[48px] leading-none tracking-[-0.01em] md:max-w-[408px] md:text-[68px] lg:max-w-[480px] lg:text-[80px]">
+            </Reveal>
+            <Reveal
+              as="h2"
+              delay={0.08}
+              className="max-w-[288px] text-[48px] leading-none tracking-[-0.01em] md:max-w-[408px] md:text-[68px] lg:max-w-[480px] lg:text-[80px]"
+            >
               What are you in the mood for?
-            </h2>
+            </Reveal>
           </div>
           <img
             src={img("illustration-10.svg")}
             alt=""
-            className="pointer-events-none absolute top-[88px] right-[180px] hidden w-[200px] -rotate-[30deg] lg:block"
-          />
-          <img
-            src={img("illustration-10.svg")}
-            alt=""
-            className="pointer-events-none absolute top-[112px] right-5 hidden w-[144px] -rotate-[30deg] md:block lg:hidden"
+            className="pointer-events-none absolute top-[88px] right-[180px] hidden w-[200px] -rotate-[30deg] xl:block"
           />
         </div>
 
-        <div className="grid items-center gap-[120px] lg:grid-cols-12 lg:gap-4">
+        <div className="grid items-center gap-[120px] lg:grid-cols-12 lg:gap-4 lg:gap-x-8">
           <div className="relative flex min-w-0 flex-col items-center gap-6 md:gap-10 lg:col-span-6 lg:flex-row lg:items-center">
-            <p className="z-[1] text-center text-[14px] font-medium leading-[1.44] tracking-[-0.01em] md:absolute md:top-10 md:left-0 md:w-[144px] md:-rotate-45 lg:static lg:w-auto lg:rotate-180 lg:whitespace-nowrap lg:[writing-mode:vertical-rl]">
+            <p className="z-[1] max-w-[240px] text-center text-[14px] font-medium leading-[1.44] tracking-[-0.01em] lg:static lg:max-w-none lg:w-auto lg:rotate-180 lg:whitespace-nowrap lg:[writing-mode:vertical-rl]">
               Choose your mood. We&apos;ll do the rest.
             </p>
 
@@ -100,12 +101,12 @@ export function MoodMatcherSection() {
                 <img
                   src={img("illustration-8.svg")}
                   alt=""
-                  className="absolute top-1/2 left-1/2 w-16 origin-left transition-transform duration-500 ease-out lg:w-[104px]"
+                  className="absolute top-1/2 left-1/2 w-16 origin-left transition-transform duration-500 ease-out md:w-[104px]"
                   style={{
                     transform: `translateY(-50%) rotate(${arrow}deg)`,
                   }}
                 />
-                <div className="relative flex size-16 items-center justify-center rounded-full border-[3px] border-[#1F3D38] bg-[#AAD0C8] p-4 lg:size-20 lg:p-6">
+                <div className="relative flex size-16 items-center justify-center rounded-full border-[3px] border-[#1F3D38] bg-[#AAD0C8] p-4 md:size-20 md:p-6">
                   <img
                     src={img("illustration-1.svg")}
                     alt=""
@@ -118,25 +119,23 @@ export function MoodMatcherSection() {
             <img
               src={img("illustration-25.svg")}
               alt=""
-              className="pointer-events-none absolute right-0 bottom-0 w-12 rotate-[110deg] md:w-20 lg:-right-4 lg:-bottom-4"
+              className="pointer-events-none absolute right-0 bottom-0 hidden w-12 rotate-[110deg] sm:block md:w-20 lg:-right-4 lg:-bottom-4"
             />
             <img
               src={img("illustration-8b.svg")}
               alt=""
-              className="pointer-events-none absolute top-[200px] -right-[200px] hidden w-[144px] rotate-[15deg] lg:block"
-            />
-            <img
-              src={img("illustration-9.svg")}
-              alt=""
-              className="pointer-events-none absolute bottom-[-80px] left-6 hidden w-20 rotate-45 md:block lg:hidden"
+              className="pointer-events-none absolute top-[200px] -right-[200px] hidden w-[144px] rotate-[15deg] xl:block"
             />
           </div>
 
           <div className="flex items-center justify-center lg:col-span-4 lg:col-start-9 lg:justify-end">
-            <article className="flex w-full max-w-[360px] flex-col gap-7 rounded-[24px] bg-[#FFFFFF] p-3 text-[#1F3D38] md:max-w-[400px] lg:max-w-[360px]">
+            <article className="flex w-full max-w-[360px] flex-col gap-6 rounded-[24px] bg-[#FFFFFF] p-2 text-[#1F3D38] md:max-w-[400px] md:gap-7 md:p-3 lg:max-w-[360px]">
               <div className="relative aspect-[4/3] w-full overflow-hidden rounded-[12px]">
-                <img
+                <motion.img
                   key={current.drink.image}
+                  initial={{ opacity: 0, scale: 1.04 }}
+                  animate={{ opacity: 1, scale: 1 }}
+                  transition={{ duration: 0.5, ease: [0.16, 1, 0.3, 1] }}
                   src={current.drink.image}
                   alt={current.drink.imageAlt}
                   className="absolute inset-0 size-full object-cover"
@@ -194,19 +193,21 @@ function WheelSlice({
   if (!mood) return null;
 
   return (
-    <button
+    <motion.button
       type="button"
       aria-pressed={active}
       onClick={() => onSelect(mood.id)}
+      whileTap={{ scale: 0.94 }}
+      transition={{ duration: 0.2 }}
       className={cn(
-        "flex aspect-square w-full flex-col transition-colors duration-300",
+        "flex aspect-square w-full min-w-0 flex-col overflow-hidden transition-colors duration-300",
         active
           ? "bg-[#AAD0C8] text-[#1F3D38]"
           : "bg-[#FFFFFF] text-[#1F3D38]/80 hover:text-[#1F3D38]",
         className,
       )}
     >
-      <span className="flex w-full max-w-[128px] flex-col items-center gap-1.5">
+      <span className="flex w-full max-w-[128px] flex-col items-center gap-1.5 px-1 text-center">
         <span className="font-hand text-[16px] leading-[1.04]">
           {mood.title}
         </span>
@@ -214,6 +215,6 @@ function WheelSlice({
           {mood.subtitle}
         </span>
       </span>
-    </button>
+    </motion.button>
   );
 }

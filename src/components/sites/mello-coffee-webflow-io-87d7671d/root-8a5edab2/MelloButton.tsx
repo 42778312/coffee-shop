@@ -1,3 +1,6 @@
+"use client";
+
+import { motion } from "motion/react";
 import { cn } from "@/lib/utils";
 
 type Variant = "primary" | "ghost" | "ghostOnDark";
@@ -27,17 +30,20 @@ export function MelloButton({
   rel?: string;
 }) {
   return (
-    <a
+    <motion.a
       href={href}
       target={target}
       rel={rel ?? (target === "_blank" ? "noreferrer" : undefined)}
       className={cn(
-        "inline-flex h-[66px] items-center justify-center rounded-[20px] px-7 text-[18px] font-medium leading-none transition",
+        "inline-flex h-14 shrink-0 items-center justify-center rounded-[18px] px-6 text-[16px] font-medium leading-none transition-colors sm:h-[66px] sm:rounded-[20px] sm:px-7 sm:text-[18px]",
         variants[variant],
         className,
       )}
+      whileHover={{ scale: 1.035 }}
+      whileTap={{ scale: 0.96 }}
+      transition={{ duration: 0.2, ease: [0.16, 1, 0.3, 1] }}
     >
       {children}
-    </a>
+    </motion.a>
   );
 }

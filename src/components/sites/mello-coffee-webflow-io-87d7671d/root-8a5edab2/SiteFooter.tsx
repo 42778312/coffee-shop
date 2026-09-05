@@ -1,9 +1,13 @@
 import { img } from "./assets";
+import { Reveal } from "./Reveal";
 
 export function SiteFooter() {
   return (
     <footer className="bg-[#AAD0C8] px-5 py-12 text-[#1F3D38] md:px-10">
-      <div className="mx-auto grid max-w-[1180px] gap-10 md:grid-cols-[1.2fr_2fr]">
+      <Reveal
+        as="div"
+        className="mx-auto grid max-w-[1180px] gap-10 md:grid-cols-[1.2fr_2fr]"
+      >
         <div>
           <div className="flex items-center gap-3">
             <span className="font-heading text-[40px] leading-none">Mello</span>
@@ -56,17 +60,17 @@ export function SiteFooter() {
             <p className="text-[13px] font-medium opacity-70">Contact</p>
             <ul className="mt-3 space-y-2 text-[16px] font-medium">
               <li className="flex items-start gap-2">
-                <img src={img("map-pin.svg")} alt="" className="mt-0.5 h-4" />
-                28 Roastery Lane, Brooklyn, NY
+                <img src={img("map-pin.svg")} alt="" className="mt-0.5 h-4 shrink-0" />
+                <span>28 Roastery Lane, Brooklyn, NY</span>
               </li>
               <li className="flex items-start gap-2">
-                <img src={img("envelope.svg")} alt="" className="mt-0.5 h-4" />
+                <img src={img("envelope.svg")} alt="" className="mt-0.5 h-4 shrink-0" />
                 <a href="mailto:hi@mello.com">hi@mello.com</a>
               </li>
             </ul>
           </div>
         </div>
-      </div>
+      </Reveal>
     </footer>
   );
 }

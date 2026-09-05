@@ -13,7 +13,7 @@ import { WhatMattersSection } from "@/components/sites/mello-coffee-webflow-io-8
 
 export default function Home() {
   return (
-    <main className="overflow-x-hidden bg-white text-[#1F3D38]">
+    <main className="min-w-0 overflow-x-hidden bg-white text-[#1F3D38]">
       <SiteHeader />
       <HeroSection />
       <TickerMarquee />

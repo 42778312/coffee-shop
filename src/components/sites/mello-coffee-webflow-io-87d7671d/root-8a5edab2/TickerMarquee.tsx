@@ -11,7 +11,7 @@ export function TickerMarquee({ inverted = false }: { inverted?: boolean }) {
           : "bg-[#AAD0C8] text-[#1F3D38]"
       }`}
     >
-      <div className="mello-marquee-track flex w-max items-center gap-6 py-6 pr-6">
+      <div className="mello-marquee-track flex w-max items-center gap-6 py-4 pr-6 sm:py-6">
         {items.map((item, i) => (
           <span key={`${item}-${i}`} className="flex items-center gap-6">
             <img

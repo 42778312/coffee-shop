@@ -25,18 +25,8 @@ export const metadata: Metadata = {
   title: "Mello - Webflow HTML website template",
   description: "Coffee, matcha & fresh bakes daily",
   icons: {
-    icon: [
-      {
-        url: "/sites/mello-coffee-webflow-io-87d7671d/root-8a5edab2/seo/favicon-32.png",
-        sizes: "32x32",
-      },
-      {
-        url: "/sites/mello-coffee-webflow-io-87d7671d/root-8a5edab2/seo/favicon-48.png",
-        sizes: "48x48",
-      },
-    ],
-    apple:
-      "/sites/mello-coffee-webflow-io-87d7671d/root-8a5edab2/seo/webclip-180.png",
+    icon: "/images/logo.png",
+    apple: "/images/logo.png",
   },
 };
 

@@ -10,8 +10,7 @@ export function SiteFooter() {
       >
         <div>
           <div className="flex items-center gap-3">
-            <span className="font-heading text-[40px] leading-none">Mello</span>
-            <img src={img("illustration-25.svg")} alt="" className="h-8" />
+            <img src="/images/logo.png" alt="Stadtkind Konstanz" className="h-12 w-12" />
           </div>
           <p className="mt-3 text-[15px] font-medium">Open daily 7AM–6PM</p>
           <p className="mt-8 text-[13px] font-medium opacity-70">

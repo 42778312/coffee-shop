@@ -21,6 +21,7 @@ export function MelloButton({
   className,
   target,
   rel,
+  onClick,
 }: {
   href: string;
   children: React.ReactNode;
@@ -28,12 +29,14 @@ export function MelloButton({
   className?: string;
   target?: string;
   rel?: string;
+  onClick?: () => void;
 }) {
   return (
     <motion.a
       href={href}
       target={target}
       rel={rel ?? (target === "_blank" ? "noreferrer" : undefined)}
+      onClick={onClick}
       className={cn(
         "inline-flex h-14 shrink-0 items-center justify-center rounded-[18px] px-6 text-[16px] font-medium leading-none transition-colors sm:h-[66px] sm:rounded-[20px] sm:px-7 sm:text-[18px]",
         variants[variant],
